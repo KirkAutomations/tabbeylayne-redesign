@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" data-theme="blush">
+<html lang="en" data-theme="petal">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -339,10 +339,10 @@ body.amplify-active section{animation:color-pulse 4s ease infinite}
 <!-- Animation Switcher -->
 <div class="anim-switcher" role="radiogroup" aria-label="Background animation">
   <span class="label">BG</span>
-  <button class="anim-dot active" data-anim="particles" role="radio" aria-checked="true" aria-label="Particles" title="Particles">&#x2734;</button>
+  <button class="anim-dot" data-anim="particles" role="radio" aria-checked="true" aria-label="Particles" title="Particles">&#x2734;</button>
   <button class="anim-dot" data-anim="matrix" role="radio" aria-checked="false" aria-label="Matrix Rain" title="Matrix">&#x25A7;</button>
   <button class="anim-dot" data-anim="starfield" role="radio" aria-checked="false" aria-label="Starfield" title="Starfield">&#x2726;</button>
-  <button class="anim-dot" data-anim="aurora" role="radio" aria-checked="false" aria-label="Aurora" title="Aurora">&#x223F;</button>
+  <button class="anim-dot active" data-anim="aurora" role="radio" aria-checked="true" aria-label="Aurora" title="Aurora">&#x223F;</button>
   <button class="anim-dot" data-anim="fireflies" role="radio" aria-checked="false" aria-label="Fireflies" title="Fireflies">&#x2740;</button>
   <button class="anim-dot" data-anim="mesh" role="radio" aria-checked="false" aria-label="Geometric Mesh" title="Mesh">&#x25E3;</button>
   <button class="anim-dot" data-anim="lightning" role="radio" aria-checked="false" aria-label="Lightning" title="Lightning">&#x26A1;</button>
@@ -728,8 +728,8 @@ body.amplify-active section{animation:color-pulse 4s ease infinite}
 <!-- Theme Switcher -->
 <div class="theme-switcher" role="radiogroup" aria-label="Theme switcher">
   <span class="label">Theme</span>
-  <div class="theme-dot active" data-theme="blush" role="radio" aria-checked="true" aria-label="Blush theme" tabindex="0"></div>
-  <div class="theme-dot" data-theme="petal" role="radio" aria-checked="false" aria-label="Petal theme" tabindex="0"></div>
+  <div class="theme-dot" data-theme="blush" role="radio" aria-checked="false" aria-label="Blush theme" tabindex="0"></div>
+  <div class="theme-dot active" data-theme="petal" role="radio" aria-checked="true" aria-label="Petal theme" tabindex="0"></div>
   <div class="theme-dot" data-theme="neon" role="radio" aria-checked="false" aria-label="Neon theme" tabindex="0"></div>
 </div>
 
@@ -760,7 +760,7 @@ body.amplify-active section{animation:color-pulse 4s ease infinite}
 const $=s=>document.querySelector(s);
 const $$=s=>[...document.querySelectorAll(s)];
 const LS_PREFIX='tabbeylayne';
-const DEFAULT_THEME='blush';
+const DEFAULT_THEME='petal';
 const ls={get:(k,d)=>{try{return localStorage.getItem(LS_PREFIX+'-'+k)||d}catch(e){return d}},set:(k,v)=>{try{localStorage.setItem(LS_PREFIX+'-'+k,v)}catch(e){}}};
 
 /* Year */
@@ -1221,7 +1221,7 @@ let compassActive=ls.get('compass','off')==='on';
 
 const ANIMS={};
 let animState={};
-let currentAnim=ls.get('anim','particles');
+let currentAnim=ls.get('anim','aurora');
 
 /* ---- 1. PARTICLES ---- */
 ANIMS.particles={
